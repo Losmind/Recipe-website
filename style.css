@@ -19,17 +19,28 @@ body {
 header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background: #F7F7F7;
   padding: 15px 2%;
   height: 74px;
+}
+nav {
+  margin-left: auto;
+}
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 li, a {
   cursor: pointer;
 }
 a {
   text-decoration: none;
+  color: #0000EE;
+}
+a:visited {
+  color: #0000EE;
 }
 .nav_links {
   list-style: none;
@@ -39,7 +50,7 @@ a {
   padding: 0 20px;
 }
 .nav_links li a {
-  font-size: 20px;
+  font-size: 16px;
   -webkit-transition: all.6s ease;
   -moz-transition: all.6s ease;
   -moz-transition: all.6s ease;
@@ -50,6 +61,41 @@ a {
 .nav_links li a:hover {
 	color:red;
 }
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 112px);
+  padding-bottom: 90px;
+  align-items: center;
+}
+.main_content {
+  text-align: center;
+  margin-top: 80px;
+  width: 1200px;
+}
+.categories_index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 100px;
+  margin: 25px;
+}
+.categories_index > div {
+  border: 1px solid black;
+}
+#h2_index {
+  font-size: 28px;
+}
+.msg {
+    display: flex;
+    border: 2px solid #2F4F4F;
+    border-radius: 0 0 10px 10px;
+    background-color: #09bd93;
+    padding: 10px;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+}
 footer {
   font-size: 15px;
   color: #fff;
@@ -58,8 +104,8 @@ footer {
   justify-content: center;
   align-content: center;
   background: #444444;
-  margin: auto 0 0 0;
   padding: 10px 0;
+  height: 38px;
 }
 .window {
   margin: auto;
@@ -152,15 +198,121 @@ button {
   background-color: #1aab1e;
   border-color: #1aab1e;
 }
+.red_button {
+  color: #fff;
+  border-color: #fa3e3e;
+  border: 2px solid #fa3e3e;
+  border-radius: 1em;
+  line-height: 1.5;
+  background-color: #fa3e3e;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5);
+  font-family: inherit;
+  font-size: 20px;
+  padding: 5px 5px;
+  -webkit-transition: all.3s ease;
+  -moz-transition: all.3s ease;
+  -moz-transition: all.3s ease;
+  -o-transition: all.3s ease;
+  -ms-transition: all.3s ease;
+  transition: all.3s ease;
+}
+.red_button:hover {
+  border-color: #f00;
+  background-color: #f00;
+}
 button.input {
   width: 150px;
 }
-.msg {
-    border: 2px solid #2F4F4F;
-    border-radius: 0 0 10px 10px;
-    background-color: #09bd93;
-    padding: 10px;
+#welcome {
+  font-size: 16px;
+  margin-top: 6px;
+}
+#contact_us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  flex-wrap: wrap;
+  width: 600px;
+}
+#contact_us_image {
+
+}
+.contact_us_form form {
+  display: flex;
+  flex-direction: column;
+}
+.input_contact_us {
+  width: 100%; padding: 5px; margin-bottom: 12px; margin-top: 10px;font-family: inherit; font-size: 16px; border: 2px solid #2F4F4F; border-radius: 5px;
+}
+.contact_us_form label {
+  font-size: 20px;
+}
+.contact_us_form textarea {
+  font-size: 15px;
+  font-family: inherit;
+  background: #fce9c0;
+  border: 2px solid #a9c358;
+  padding: 10px;
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+  resize: vertical;
+  max-height: 550px;
+  margin-bottom: 15px;
+}
+.contact_us_form button {
+  margin: auto;
+}
+#content_contact_us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.info_au {
+  text-align: center;
+  margin-top: 30px;
+}
+#content_add_recipe {
+  background-color: #c75e14;
+}
+#add_recipe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 1000px;
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
+  }
+.add_recipe_form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input_add_recipe {
+  width: 400px; padding: 5px; margin-bottom: 12px; margin-top: 10px;font-family: inherit; font-size: 16px; border: 2px solid #2F4F4F; border-radius: 5px;
+}
+.add_recipe_form label {
+  font-size: 20px;
+}
+.add_recipe_form textarea {
+  font-size: 15px;
+  font-family: inherit;
+  background: #fce9c0;
+  border: 2px solid #a9c358;
+  padding: 10px;
+  width: 700px;
+  height: 200px;
+  max-height: 400px;
+  box-sizing: border-box;
+  resize: vertical;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+}
+.add_recipe_form button {
+  margin: auto;
+}
+#h2_add_recipe {
+  margin-bottom: 20px;
 }

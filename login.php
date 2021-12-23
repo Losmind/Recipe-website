@@ -17,7 +17,7 @@ $res = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login' AND `pass` 
 $user = $res->fetch_assoc();
 if($user == 0) {
   $_SESSION['message'] = 'Неверный логин или пароль';
-  header('Location: login_form.php');
+  header('Location: index.php');
 } else {
 $uid = $user['id'];
 $login_u = $user['login'];
@@ -47,6 +47,6 @@ function rand_string($nChars, array $case = array()) {
 $arr=array('low', 'upp', 'num');
 $auth_token = rand_string(20,$arr);
 $mysql->query("INSERT INTO `clients` (`id`,`auth_token`) VALUES('$uid','$auth_token')");
-setcookie('auth_token', $auth_token, time() + 3600, "/");
+setcookie('auth_token', $auth_token, time() + 604800, "/");
 header('Location: index.php'); }}
 ?>

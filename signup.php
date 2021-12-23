@@ -3,6 +3,9 @@
  $login = $_POST['login'];
  $pass = $_POST['pass'];
  $pass_confirm = $_POST['pass_confirm'];
+ require_once 'db_connection.php';
+ $res = $mysql->query("SELECT COUNT(*) FROM users WHERE login = '$login' LIMIT 1");
+ $checkResult = $res->fetch_assoc();
  if (mb_strlen($login) < 3 || mb_strlen($login) > 50) {
    $_SESSION['message'] = 'Недопустимая длина логина';
    header('Location: index.php');
@@ -11,6 +14,9 @@
    header('Location: index.php');
  } else if ($pass != $pass_confirm) {
    $_SESSION['message'] = 'Пароли не совпадают' ;
+   header('Location: index.php');
+ } else if (current($checkResult) > 0) {
+   $_SESSION['message'] = 'This nickname already exists' ;
    header('Location: index.php');
  } else {
  function rand_string($nChars, array $case = array()) {
@@ -41,7 +47,6 @@
  var_dump($salt);
  $pass = password_hash($pass, PASSWORD_BCRYPT, $options);
  var_dump($pass);
- require_once 'db_connection.php';
  $mysql->query("INSERT INTO `users` (`login`, `pass`, `salt`) VALUES('$login', '$pass', '$salt') ");
  $mysql->close();
  $_SESSION['message'] = 'Now you can login' ;
