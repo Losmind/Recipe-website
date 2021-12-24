@@ -11,22 +11,21 @@
       <a href="index.php"><img class="logo" src="images/logo.png" width="103px" height="64px" alt="Can`t download image"></a>
       <nav>
         <ul class="nav_links">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="contact_us_check.php">Contact Us</a></li>
+          <li class="nav_links_li"><a href="index.php">Home</a></li>
+          <li class="nav_links_li"><a href="contact_us_check.php">Contact Us</a></li>
           <?php if (empty($_COOKIE['auth_token'])) { ?>
-          <li><button onclick="show('block')" class="green_button">Sign Up</button></li>
-          <li><button onclick="show2('block')" class="blue_button">Login</button></li>
+          <li class="nav_links_li"><button onclick="show('block')" class="green_button">Sign Up</button></li>
+          <li class="nav_links_li"><button onclick="show2('block')" class="blue_button">Login</button></li>
         <?php } elseif (isset($_COOKIE['auth_token'])) { ?>
-          <li><a href="add_recipe_form.php">Add recipe</a></li>
-          <li id="welcome">Welcome
+          <li class="nav_links_li"><a href="add_recipe_form.php">Add recipe</a></li>
+          <li class="nav_links_li" id="welcome">Welcome
           <?php
            if (isset($_SESSION['login_u'])) {
              echo $_SESSION['login_u'];
            }
           ?>!</li>
           <a href="personal.php"><img class="avatar" src="images/avatar.png" width="64px" height="64px" alt="Can`t download image"></a>
-          <li><a href="exit.php">Logout</a></li>
+          <li class="nav_links_li"><a href="exit.php">Logout</a></li>
         </ul>
       </nav>
       <?php } ?>

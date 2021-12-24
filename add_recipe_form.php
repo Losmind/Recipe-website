@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if (!$_COOKIE['auth_token']) {
+      header('Location: index.php');
+  }
   require 'header.php';
 ?>
 <div class="content" id="content_add_recipe">
@@ -19,7 +22,9 @@
             <input placeholder="Enter a category" class="input_add_recipe" type="text" id="category" name="category" required>
             <label for="image_recipe">Image:</label>
             <input placeholder="Enter a category" class="input_add_recipe" type="file" id="image_recipe" name="image_recipe" required>
-            <textarea name="content" placeholder="Describe your recipe" maxlength="3000" required></textarea>
+            <textarea id="ingredients" name="ingredients" placeholder="Enter the ingredients" maxlength="500" required></textarea>
+            <p id="p_add_recipe">Ингридиенты разделять переносом строки(Enter)</p>
+            <textarea id="describe_add_recipe" name="content" placeholder="Describe your recipe" maxlength="3000" required></textarea>
             <button type="submit" class="input red_button"><strong>Submit</strong></button>
           </form>
         </div>
