@@ -21,7 +21,7 @@
      unset($_SESSION['message']);
   ?>
   <div class="main_content" id="main_content_admin">
-    <h2 id="h2_admin">Добро пожаловать админ!</h2>
+    <h2 id="h2_admin">Добро пожаловать, админ!</h2>
     <div id="admin_links">
     <a class="admin_link" href="users.php">Просмотр пользователей и их удаление</a>
     <a class="admin_link" href="recipes.php">Просмотр рецептов и их удаление</a>
