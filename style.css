@@ -213,7 +213,7 @@ button {
   background-color: #f00;
 }
 button.input {
-  width: 150px;
+  width: 180px;
 }
 #welcome {
   font-size: 16px;
@@ -413,4 +413,108 @@ button.input {
 hr {
   padding: 0;
   margin: 0;
+}
+#main_content_admin {
+  margin: auto;
+}
+#admin_links {
+  margin-top: 40px;
+  display: flex;
+}
+#admin_links a {
+  margin: 15px;
+  color: #b72df7;
+  border: 2px solid #b72df7;
+  border-radius: 1em;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 5px 5px;
+  -webkit-transition: all.3s ease;
+  -moz-transition: all.3s ease;
+  -moz-transition: all.3s ease;
+  -o-transition: all.3s ease;
+  -ms-transition: all.3s ease;
+  transition: all.3s ease;
+}
+.#admin_links a:hover {
+    color: #fff;
+    background-color: #b72df7;
+    border-color: #b72df7;
+}
+#main_content_users {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.display_users {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 10px auto 0 auto;
+  border-top: 3px solid #2d70f7;
+  background-color: #c5c9d1;
+  font-size: 18px;
+}
+.display_users_container {
+  display: flex;
+  flex-direction: row;
+}
+.users_id, .users_admin, .users_login  {
+  border: 3px solid #2d70f7;
+  text-align: center;
+  width: 200px;
+  padding: 5px;
+}
+.display_users_container .border_delete:nth-child(3n - 3){
+  border-left:0px;
+  border-top:0px;
+}
+.display_users_container .border_delete:nth-child(3n - 2){
+  border-right:0px;
+  border-top:0px;
+}
+.display_users_container .border_delete:nth-child(3n - 1){
+ border-top:0px;
+}
+.admin_forms{
+  display: flex;
+  width: 900px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+.delete_user_form, .add_admin_form, .delete_admin_form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+  padding: 5px;
+}
+.input_admin_actions {
+  width: 290px; padding: 5px; margin-bottom: 12px; margin-top: 10px;font-family: inherit; font-size: 16px; border: 2px solid #2F4F4F; border-radius: 5px;
+}
+.admin_forms button {
+  font-size: 16px;
+  width: 100px;
+}
+#main_content_users h2 {
+  font-size: 26px;
+}
+.admin_forms{
+  display: flex;
+  width: 900px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+.delete_recipe_form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+}
+#content_padding_bottom {
+  padding-bottom: 30px;
 }

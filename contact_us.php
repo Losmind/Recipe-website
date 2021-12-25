@@ -14,6 +14,6 @@ var_dump($comment);
 var_dump($login);
 $mysql->query("INSERT INTO `contact_us` (`login`,`email`,`phone`,`comment`) VALUES('$login','$email','$phone','$comment')");
 $mysql->close();
-$_SESSION['message'] = 'Thanks, we will contact you soon' ;
+$_SESSION['message'] = 'Спасибо, мы скоро с вами свяжемся!' ;
 header('Location: index.php');
 ?>

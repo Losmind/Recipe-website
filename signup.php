@@ -16,7 +16,7 @@
    $_SESSION['message'] = 'Пароли не совпадают' ;
    header('Location: index.php');
  } else if (current($checkResult) > 0) {
-   $_SESSION['message'] = 'This nickname already exists' ;
+   $_SESSION['message'] = 'Данное имя уже существует' ;
    header('Location: index.php');
  } else {
  function rand_string($nChars, array $case = array()) {
@@ -49,7 +49,7 @@
  var_dump($pass);
  $mysql->query("INSERT INTO `users` (`login`, `pass`, `salt`) VALUES('$login', '$pass', '$salt') ");
  $mysql->close();
- $_SESSION['message'] = 'Now you can login' ;
+ $_SESSION['message'] = 'Теперь вы можете войти' ;
  header('Location: index.php');
 }
 ?>
